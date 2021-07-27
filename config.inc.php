@@ -32,35 +32,9 @@ $filedb = "{$filedir}data.json";
 // File DB for moderation data (banned IPs, Nicks, whitelists, etc)
 $filemod = "{$filedir}modData.json";
 
+// Maximum messages for show in the index
 $maxMessages = "10";
 
+// Key used for obfuscate data, be sure to change it on a custom installation
 $xorKey = "panchatKey";
-/*
-// This is unnecesary as fuck, why i did this lmao
-// I can't blame, i was a newbie in those years
-// NOTE FOR LATER, remove these when i finish the project
-// File DB for the "Ban Clear chat" function
-$filedbcls = 'bancls.txt';
-
-// File DB for the "Ban clear chat" function (list)
-$filedbclslist = 'banclslist.txt';
-
-// File DB for banned IPs (message function) - Default: banmsj.txt
-$filedbbanmsj = 'banmsj.txt';
-
-// File DB for banned IPs (message function - list) - Default: banmsjlist.txt
-$filedbbanmsjlist = 'banmsjlist.txt';
-
-// File DB for banned nicks - Default: banick.txt
-$filedbbanick = 'banick.txt';
-
-// File DB for banned nicks (list) - Default: banicklist.txt
-$filedbbanicklist = 'banicklist.txt';
-
-// File DB for allowed IPs for clear chat function - Default: allowedipcl.txt
-$filedballowedipcl = 'allowedipcl.txt';
-
-// File DB for allowed IPs for clear chat function - Default: allowedipclist.txt
-$filedballowedipclist = 'allowedipclist.txt';
-*/
 ?>
