@@ -37,11 +37,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie('passwd', $enc1p, time()+3600);
             header("Location: modcp.php");
         } else {
-            header("Location: error.html");
+            echo "<!DOCTYPE html><html><head><title>ERROR</title></head><body><fieldset><legend>ERROR</legend><p>Login Failed! Please try again</p><p><a href=\"modAuth.php\">Back</a></fieldset></body></html>";
             die;
         }
     } else {
-        header("Location: error.html");
+        echo "<!DOCTYPE html><html><head><title>ERROR</title></head><body><fieldset><legend>ERROR</legend><p>Login Failed! Please try again</p><p><a href=\"modAuth.php\">Back</a></fieldset></body></html>";
         die;
     }
 } else {
