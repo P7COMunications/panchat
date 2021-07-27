@@ -4,6 +4,8 @@
 
 [![Download Panchat](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/panchat-php/files/latest/download)
 
+### Demo
+You can test this project by clicking [here](http://boompancho.p7com.net/chat)
 ### Features
 - Chat
 - Moderation panel where you can ban nicknames and IPs
@@ -16,4 +18,4 @@
 
 Coded and developed by PANCHO7532
 
-Free open source script, not for massive commercial use. Copyright P7COMunications LLC - 2021
+Free open source script, not for massive commercial use. Copyright P7COMunications LLC
