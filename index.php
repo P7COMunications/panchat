@@ -134,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     document.getElementById("chatContent").innerHTML = uwuParser.parseFromString(httpRequest.responseText, "text/html").getElementById("chatContent").innerHTML;
                 }
                 httpRequest.send();
-            }, parseInt(document.getElementById("javascriptRefresh").value)*1000;
+            }, parseInt(document.getElementById("javascriptRefresh").value)*1000);
         </script>
     </head>
     <body>
