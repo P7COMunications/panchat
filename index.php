@@ -125,17 +125,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
     <head>
         <title>Home - Panchat</title>
-        <script>
-            setInterval(function() {
-                var httpRequest = new XMLHttpRequest();
-                httpRequest.open("GET", "index.php", true);
-                httpRequest.onload = function() {
-                    var uwuParser = new DOMParser();
-                    document.getElementById("chatContent").innerHTML = uwuParser.parseFromString(httpRequest.responseText, "text/html").getElementById("chatContent").innerHTML;
-                }
-                httpRequest.send();
-            }, parseInt(document.getElementById("javascriptRefresh").value)*1000);
-        </script>
     </head>
     <body>
         <form action="index.php" method="POST">
@@ -165,4 +154,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </fieldset>
         </form>
     </body>
+    <script>
+    setInterval(function() {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open("GET", "index.php", true);
+        httpRequest.onload = function() {
+            var uwuParser = new DOMParser();
+            document.getElementById("chatContent").innerHTML = uwuParser.parseFromString(httpRequest.responseText, "text/html").getElementById("chatContent").innerHTML;
+        }
+        httpRequest.send();
+    }, parseInt(document.getElementById("javascriptRefresh").value)*1000);
+    </script>
 </html>
