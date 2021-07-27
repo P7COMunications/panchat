@@ -137,12 +137,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $messageDB = json_decode(file_get_contents($filedb), true);
                 if(sizeof($messageDB["messages"]) == 0) {
                     echo "<br>[No messages to show]";
-                }
-                foreach($messageDB["messages"] as $messages) {
-                    $tmpnick = xorCrypto($xorKey, base64_decode($messages["nick"]));
-                    $tmpip = xorCrypto($xorKey, base64_decode($messages["ip"]));
-                    $tmpmsg = xorCrypto($xorKey, base64_decode($messages["message"]));
-                    echo "<br>{$tmpnick}({$tmpip}): {$tmpmsg}";
+                } else {
+                    foreach($messageDB["messages"] as $messages) {
+                        $tmpnick = xorCrypto($xorKey, base64_decode($messages["nick"]));
+                        $tmpip = xorCrypto($xorKey, base64_decode($messages["ip"]));
+                        $tmpmsg = xorCrypto($xorKey, base64_decode($messages["message"]));
+                        echo "<br>{$tmpnick}({$tmpip}): {$tmpmsg}";
+                    }
                 }
                 ?>
                 <p><b>Nick: </b><input type="text" name="author" value="<?php if(isset($_COOKIE['author'])) { echo $_COOKIE['author'];} else { echo "NULL";} ?>"/></p>
