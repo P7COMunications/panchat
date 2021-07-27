@@ -1,6 +1,8 @@
 # Panchat
 ## The awesome PHP Chat Script, what dont use any MySQL DBs! \\(:D)/
-[![Download Panchat in Sourceforge!](https://img.shields.io/sourceforge/dt/panchat-php.svg)](https://sourceforge.net/projects/panchat-php/files/latest/download) [![Download Panchat](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/panchat-php/files/latest/download)
+[![Download Panchat in Sourceforge!](https://img.shields.io/sourceforge/dt/panchat-php.svg)](https://sourceforge.net/projects/panchat-php/files/latest/download)
+
+[![Download Panchat](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/panchat-php/files/latest/download)
 
 ### Features
 - Chat
