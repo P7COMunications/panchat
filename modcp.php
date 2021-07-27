@@ -171,6 +171,7 @@ if(isset($_GET["removeIPc"]) && $_GET["removeIPc"] != "") {
     <br>
     Value: <input type="text" autocomplete="off" name="modActionValue"/>
     <input type="submit" value="Submit"/>
+    <br><a href="index.php">Go to the main page</a>
 </form>
 </fieldset>
 </body>
