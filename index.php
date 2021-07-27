@@ -77,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         die;
     }
     //uuh yeah, exceptions
-    if($author == '' || $author == "NULL") {
+    if($author == '') {
         header("Location: index.php");
         die;
     }
@@ -125,13 +125,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
     <head>
         <title>Home - Panchat</title>
-        <meta http-equiv="refresh" content="<?php if(isset($_COOKIE['autoload5'])) { if($_COOKIE['autoload5'] == 1) { echo $timeoutal5; } if($_COOKIE['autoload5'] == 2) { echo " "; } } else { echo " "; } ?>"/>
+        <script>
+            setInterval(function() {
+                var httpRequest = new XMLHttpRequest();
+                httpRequest.open("GET", "index.php", true);
+                httpRequest.onload = function() {
+                    var uwuParser = new DOMParser();
+                    document.getElementById("chatContent").innerHTML = uwuParser.parseFromString(httpRequest.responseText, "text/html").getElementById("chatContent").innerHTML;
+                }
+                httpRequest.send();
+            }, parseInt(document.getElementById("javascriptRefresh").value)*1000;
+        </script>
     </head>
     <body>
         <form action="index.php" method="POST">
             <fieldset>
                 <legend>Chat</legend>
                 <!-- CHAT DATA HERE -->
+                <div id="chatContent">
                 <?php
                 include 'config.inc.php';
                 $messageDB = json_decode(file_get_contents($filedb), true);
@@ -146,9 +157,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
                 ?>
-                <p><b>Nick: </b><input type="text" name="author" value="<?php if(isset($_COOKIE['author'])) { echo $_COOKIE['author'];} else { echo "NULL";} ?>"/></p>
+                </div>
+                <p><b>Nick: </b><input type="text" name="author" value="<?php if(isset($_COOKIE['author'])) { echo $_COOKIE['author']; } ?>"/></p>
                 <p><b>Message: </b><input type="text" name="data" autocomplete="off" value=""/><input type="submit" value="Send"/></p>
-                <p><a href="index.php?clear=1">Clear chat</a> | <a href="modAuth.php">Moderation Panel</a> | <a href="settings.php">Settings</a> | <a href="about.html">About</a>
+                <p><b>Auto-Refresh (def: 5)</b><input type="number" id="javascriptRefresh" min="5" value="5"/></p>
+                <p><a href="index.php?clear=1">Clear chat</a> | <a href="modAuth.php">Moderation Panel</a> | <a href="about.html">About</a>
             </fieldset>
         </form>
     </body>
