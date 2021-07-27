@@ -149,7 +149,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <p><b>Nick: </b><input type="text" name="author" value="<?php if(isset($_COOKIE['author'])) { echo $_COOKIE['author']; } ?>"/></p>
                 <p><b>Message: </b><input type="text" name="data" autocomplete="off" value=""/><input type="submit" value="Send"/></p>
-                <p><b>Auto-Refresh (def: 5)</b><input type="number" id="javascriptRefresh" min="5" value="5"/></p>
+                <p><b>Auto-Refresh (def: 5)</b><input type="number" id="javascriptRefresh" min="5" value="5"/><input type="button" onclick="window.location.reload()" value="Refresh"/></p>
                 <p><a href="index.php?clear=1">Clear chat</a> | <a href="modAuth.php">Moderation Panel</a> | <a href="about.html">About</a>
             </fieldset>
         </form>
