@@ -92,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         die;
     }
     if(in_array(base64_encode(xorCrypto($xorKey, $_SERVER["REMOTE_ADDR"])), $tmpModData["bannedIPs"])) {
-        echo "<!DOCTYPE html><html><head><title>ERROR</title></head><body><fieldset><legend>Banned</legend><p>ERROR: This nickname it's banned, please choose a new one</p><p><a href='index.php'>Go Back</a></p></fieldset></body></html>";
+        echo "<!DOCTYPE html><html><head><title>ERROR</title></head><body><fieldset><legend>Banned</legend><p>ERROR: You're not allowed to send messages, contact the administrator of this page for more info.</p><p><a href='index.php'>Go Back</a></p></fieldset></body></html>";
         die;
     }
     $messageModel = array(
